@@ -6,12 +6,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/svg-selector.umd.cjs",
-  "module": "./dist/svg-selector.js",
+  "main": "./dist/svg-selector.umd.js",
+  "module": "./dist/svg-selector.mjs",
   "exports": {
     ".": {
-      "import": "./dist/svg-selector.js",
-      "require": "./dist/svg-selector.umd.cjs"
+      "import": "./dist/svg-selector.mjs",
+      "require": "./dist/svg-selector.umd.js"
     }
   },
   "scripts": {
