@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import MapSvgSelector from "./index";
+import svgSelector from "./index";
 
 const app = createApp(App);
 
-app.use(MapSvgSelector);
+app.use(svgSelector);
 
 app.mount("#app");

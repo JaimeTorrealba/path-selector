@@ -1,4 +1,4 @@
-# MapSvgSelector
+# svg-selector
 
 This package uses by default the world map svg from [mapsvg](http://mapsvg.com)
 

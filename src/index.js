@@ -1,6 +1,6 @@
-import MapSvgSelector from "./components/entryPoint.vue";
+import svgSelector from "./components/entryPoint.vue";
 export default {
   install: (app) => {
-    app.component("MapSvgSelector", MapSvgSelector);
+    app.component("svg-selector", svgSelector);
   },
 };
