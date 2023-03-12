@@ -1,8 +1,19 @@
 {
-  "name": "svg-map-selector",
+  "name": "map-svg-selector",
   "version": "0.0.2",
   "private": false,
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/MapSvgSelector.umd.cjs",
+  "module": "./dist/MapSvgSelector.js",
+  "exports": {
+    ".": {
+      "import": "./dist/MapSvgSelector.js",
+      "require": "./dist/MapSvgSelector.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
