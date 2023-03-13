@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import mapSvg from "./mapSvgHandler.vue";
-import slotDefaultMap from "../defaultWorldMap.vue";
+import slotDefaultMap from "./defaultWorldMap.vue";
 
 const props = defineProps({
   hiddenCloseButton: {
@@ -75,7 +75,7 @@ const selectPath = (path) => {
   </Teleport>
 </template>
 <style scoped>
-.modal-mask {
+.modal-svg-selector-mask {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -87,7 +87,7 @@ const selectPath = (path) => {
   transition: opacity 0.3s ease;
 }
 
-.modal-container {
+.modal-svg-selector-container {
   min-width: 80vw;
   min-height: 80vh;
   margin: auto;
@@ -98,25 +98,25 @@ const selectPath = (path) => {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
-  .modal-container {
+  .modal-svg-selector-container {
     min-height: 50vh;
   }
 }
 
-.modal-default-button {
+.modal-svg-selector-default-button {
   float: right;
 }
 
-.modal-enter-from {
+.modal-svg-selector-enter-from {
   opacity: 0;
 }
 
-.modal-leave-to {
+.modal-svg-selector-leave-to {
   opacity: 0;
 }
 
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
+.modal-svg-selector-enter-from .modal-svg-selector-container,
+.modal-svg-selector-leave-to .modal-svg-selector-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

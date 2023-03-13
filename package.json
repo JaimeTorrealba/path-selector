@@ -12,7 +12,8 @@
     ".": {
       "import": "./dist/svg-selector.mjs",
       "require": "./dist/svg-selector.umd.js"
-    }
+    },
+    "./dist/style.css":"./dist/style.css"
   },
   "scripts": {
     "dev": "vite",
