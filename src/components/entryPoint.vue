@@ -56,9 +56,9 @@ const selectPath = (path) => {
   <Teleport to="body">
     <Transition name="modal">
       <div v-if="showModal" class="modal-mask">
-        <div class="modal-container">
+        <div class="modal-svg-selector-container">
           <button
-            class="modal-default-button"
+            class="modal-svg-selector-default-button"
             @click="showModal = false"
             v-if="!hiddenCloseButton"
           >
