@@ -62,10 +62,10 @@ onUnmounted(() => {
 svg {
   display: block;
 }
-:deep(path) {
+#mapSvg path {
   transition: all 0.5s;
 }
-:deep(path:hover):hover {
+#mapSvg path:hover {
   cursor: pointer;
   fill: v-bind("mapData.hoverColor");
 }

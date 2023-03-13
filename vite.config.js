@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       // eslint-disable-next-line no-undef
-      entry: resolve(__dirname, "src/index.js"),
+      entry: resolve(__dirname, "lib/index.js"),
       name: "svg-selector",
       fileName: "svg-selector",
     },
