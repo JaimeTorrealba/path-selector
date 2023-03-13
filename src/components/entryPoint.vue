@@ -55,7 +55,7 @@ const selectPath = (path) => {
   </button>
   <Teleport to="body">
     <Transition name="modal">
-      <div v-if="showModal" class="modal-mask">
+      <div v-if="showModal" class="modal-svg-selector-mask">
         <div class="modal-svg-selector-container">
           <button
             class="modal-svg-selector-default-button"
@@ -115,8 +115,8 @@ const selectPath = (path) => {
   opacity: 0;
 }
 
-.modal-svg-selector-enter-from .modal-svg-selector-container,
-.modal-svg-selector-leave-to .modal-svg-selector-container {
+.modal-enter-from .modal-svg-selector-container,
+.modal-leave-to .modal-svg-selector-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

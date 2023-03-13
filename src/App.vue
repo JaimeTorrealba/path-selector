@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <MapSvgSelector @selectedPath="(path) => handleResult(path)" />
+  <svg-selector @selectedPath="(path) => handleResult(path)" />
 </template>
