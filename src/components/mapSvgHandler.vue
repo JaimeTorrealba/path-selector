@@ -58,7 +58,7 @@ onUnmounted(() => {
   </svg>
 </template>
 
-<style scoped>
+<style>
 svg {
   display: block;
 }

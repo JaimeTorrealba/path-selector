@@ -74,7 +74,7 @@ const selectPath = (path) => {
     </Transition>
   </Teleport>
 </template>
-<style scoped>
+<style>
 .modal-svg-selector-mask {
   position: fixed;
   z-index: 9998;
