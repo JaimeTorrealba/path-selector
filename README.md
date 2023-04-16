@@ -12,11 +12,11 @@ npm i path-selector
 Then inside your main.js (ts)
 
 ```js
-import svgSelector from "path-selector";
+import pathSelector from "path-selector";
 
 import "path-selector/dist/style.css"
 
-createApp(App).use(svgSelector).mount('#app')
+createApp(App).use(pathSelector).mount('#app')
 ```
 
 ## How to use
