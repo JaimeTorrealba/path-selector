@@ -55,10 +55,10 @@ const selectPath = (path) => {
   </button>
   <Teleport to="body">
     <Transition name="modal">
-      <div v-if="showModal" class="modal-svg-selector-mask">
-        <div class="modal-svg-selector-container">
+      <div v-if="showModal" class="modal-path-selector-mask">
+        <div class="modal-path-selector-container">
           <button
-            class="modal-svg-selector-default-button"
+            class="modal-path-selector-default-button"
             @click="showModal = false"
             v-if="!hiddenCloseButton"
           >
@@ -75,7 +75,7 @@ const selectPath = (path) => {
   </Teleport>
 </template>
 <style>
-.modal-svg-selector-mask {
+.modal-path-selector-mask {
   position: fixed;
   z-index: 9998;
   top: 0;
@@ -87,7 +87,7 @@ const selectPath = (path) => {
   transition: opacity 0.3s ease;
 }
 
-.modal-svg-selector-container {
+.modal-path-selector-container {
   min-width: 80vw;
   min-height: 80vh;
   margin: auto;
@@ -98,25 +98,25 @@ const selectPath = (path) => {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 768px) {
-  .modal-svg-selector-container {
+  .modal-path-selector-container {
     min-height: 50vh;
   }
 }
 
-.modal-svg-selector-default-button {
+.modal-path-selector-default-button {
   float: right;
 }
 
-.modal-svg-selector-enter-from {
+.modal-path-selector-enter-from {
   opacity: 0;
 }
 
-.modal-svg-selector-leave-to {
+.modal-path-selector-leave-to {
   opacity: 0;
 }
 
-.modal-enter-from .modal-svg-selector-container,
-.modal-leave-to .modal-svg-selector-container {
+.modal-enter-from .modal-path-selector-container,
+.modal-leave-to .modal-path-selector-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }

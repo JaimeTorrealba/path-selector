@@ -9,8 +9,8 @@ export default defineConfig({
     lib: {
       // eslint-disable-next-line no-undef
       entry: resolve(__dirname, "lib/index.js"),
-      name: "svg-selector",
-      fileName: "svg-selector",
+      name: "path-selector",
+      fileName: "path-selector",
     },
     rollupOptions: {
       external: ["vue", "@dash14/svg-pan-zoom"],

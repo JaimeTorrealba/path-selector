@@ -1,10 +1,23 @@
-# svg-selector
+# path-selector
 
 This package uses by default the world map svg from [mapsvg](http://mapsvg.com)
 
 Create a modal that can listen for any selected path as you see in the following examples:
 
 ## Install
+```js
+npm i path-selector
+```
+
+Then inside your main.js (ts)
+
+```js
+import svgSelector from "path-selector";
+
+import "path-selector/dist/style.css"
+
+createApp(App).use(svgSelector).mount('#app')
+```
 
 ## How to use
 

@@ -1,17 +1,17 @@
 {
-  "name": "svg-selector",
+  "name": "path-selector",
   "version": "0.0.10",
   "private": false,
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "main": "./dist/svg-selector.umd.js",
-  "module": "./dist/svg-selector.mjs",
+  "main": "./dist/path-selector.umd.js",
+  "module": "./dist/path-selector.mjs",
   "exports": {
     ".": {
-      "import": "./dist/svg-selector.mjs",
-      "require": "./dist/svg-selector.umd.js"
+      "import": "./dist/path-selector.mjs",
+      "require": "./dist/path-selector.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
