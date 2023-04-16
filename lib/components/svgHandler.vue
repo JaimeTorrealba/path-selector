@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted, toRefs } from "vue";
 import dataWorld from "../assets/world.json";
 import svgPanZoom from "@dash14/svg-pan-zoom";
 const props = defineProps({
-  mapData: {
+  svgProps: {
     type: Object,
     required: true,
   },
@@ -11,12 +11,12 @@ const props = defineProps({
 
 const emit = defineEmits(["sendPathUp"]);
 
-const { mapData } = toRefs(props);
+const { svgProps } = toRefs(props);
 
 const svg = ref(null);
 
-const jsonData = mapData.value.mapJson.length
-  ? mapData.value.mapJson
+const jsonData = svgProps.value.svgData.length
+  ? svgProps.value.svgData
   : dataWorld;
 
 const sendPathUp = (pathNode) => {
@@ -44,15 +44,15 @@ onUnmounted(() => {
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    :width="mapData.width"
-    :height="mapData.height"
-    :viewBox="mapData.viewBox"
+    :width="svgProps.width"
+    :height="svgProps.height"
+    :viewBox="svgProps.viewBox"
     aria-labelledby="map"
     role="presentation"
     ref="svg"
     id="mapSvg"
   >
-    <g :fill="mapData.mapColor" class="svg-pan-zoom_viewport">
+    <g :fill="svgProps.pathColor" class="svg-pan-zoom_viewport">
       <slot />
     </g>
   </svg>
@@ -67,6 +67,6 @@ svg {
 }
 #mapSvg path:hover {
   cursor: pointer;
-  fill: v-bind("mapData.hoverColor");
+  fill: v-bind("svgProps.hoverColor");
 }
 </style>

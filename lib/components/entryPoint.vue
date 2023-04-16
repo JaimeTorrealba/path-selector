@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from "vue";
-import mapSvg from "./mapSvgHandler.vue";
+import svgHandler from "./svgHandler.vue";
 import slotDefaultMap from "./defaultWorldMap.vue";
 
 const props = defineProps({
-  hiddenCloseButton: {
+  hasCloseButton: {
     type: Boolean,
     required: false,
-    default: false,
+    default: true,
   },
   width: {
     type: [String, Number],
@@ -19,7 +19,7 @@ const props = defineProps({
     required: false,
     default: () => (window.innerWidth < 768 ? "50vh" : "75vh"),
   },
-  mapColor: {
+  pathColor: {
     type: String,
     required: false,
     default: "#333",
@@ -34,7 +34,7 @@ const props = defineProps({
     required: false,
     default: "0 0 1025 650",
   },
-  mapJson: {
+  svgData: {
     type: Array,
     required: false,
     default: () => [],
@@ -42,33 +42,46 @@ const props = defineProps({
 });
 const emit = defineEmits(["selectedPath"]);
 
-const showModal = ref(false);
+const modal = ref(false);
+
+const showModal = () => {
+  modal.value = true;
+};
+
+const hideModal = () => {
+  modal.value = false;
+};
 
 const selectPath = (path) => {
   emit("selectedPath", path);
-  showModal.value = false;
+  modal.value = false;
 };
 </script>
 <template>
-  <button @click="showModal = true">
-    <slot name="openButton"> Open map </slot>
-  </button>
+  <slot name="openButton" :showModal="showModal">
+    <button @click="modal = true">Open modal</button>
+  </slot>
   <Teleport to="body">
     <Transition name="modal">
-      <div v-if="showModal" class="modal-path-selector-mask">
+      <div v-if="modal" class="modal-path-selector-mask">
         <div class="modal-path-selector-container">
-          <button
-            class="modal-path-selector-default-button"
-            @click="showModal = false"
-            v-if="!hiddenCloseButton"
+          <slot name="closeButton" :hideModal="hideModal">
+            <button
+              class="modal-path-selector-default-button"
+              @click="modal = false"
+              v-if="hasCloseButton"
+            >
+              Close
+            </button>
+          </slot>
+          <svg-handler
+            :svgProps="props"
+            @sendPathUp="(path) => selectPath(path)"
           >
-            <slot name="closeButton"> Close </slot>
-          </button>
-          <map-svg :mapData="props" @sendPathUp="(path) => selectPath(path)">
-            <slot name="map">
+            <slot name="svg">
               <slotDefaultMap />
             </slot>
-          </map-svg>
+          </svg-handler>
         </div>
       </div>
     </Transition>
